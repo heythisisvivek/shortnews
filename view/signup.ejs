@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+    <link rel="manifest" href="./assets/images/site.webmanifest">
+    <link rel="mask-icon" href="./assets/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="./assets/style/signup.css">
+    <script defer src="./assets/js/base.js"></script>
+    <script defer src="./assets/js/signup.js"></script>
+</head>
+<body>
+    <div class="progress">
+        <div class="indeterminate"></div>
+    </div>
+    <div class="afterload">
+        
+        <div class="row">
+            <div class="col m6 offset-m3">
+                <form action="/signup" method="post" class="form">
+                    <div>
+                        <script>
+                            let getmsg = new URLSearchParams(location.search).get("msg");
+                            if(getmsg) {
+                                document.write(getmsg);
+                            }
+                        </script>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6 m6">
+                            <input type="text" class="validate" name="fname" id="fname" required />
+                            <label for="fname">First Name</label>
+                        </div>
+                        <div class="input-field col s6 m6">
+                            <input type="text" class="validate" name="lname" id="lname" required />
+                            <label for="lname">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m12">
+                            <input type="text" class="validate" name="username" id="username" required />
+                            <label for="username">Username</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m12">
+                            <input type="email" class="validate" name="email" id="email" required/>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m12">
+                            <input type="password" class="validate" name="password" id="password" required />
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m12">
+                            <input type="password" class="validate" name="cpassword" id="cpassword" required />
+                            <label for="cpassword">Confirm Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>
+                            <label>
+                                <input name="gender" type="radio" value="male" checked />
+                                <span>Male</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="gender" type="radio" value="female" />
+                                <span>Female</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m12">
+                            <input type="text" class="datepicker" id="dob" name="dob" required />
+                            <label for="dob">Date of Birth</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4 m2">
+                            <button type="submit" class="btn waves-effect waves-light">SUBMIT</button>
+                        </div>
+                            <div class="input-field col s4 m2">
+                            <a href="/login" class="btn waves-effect waves-light black">SIGN IN</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

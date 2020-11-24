@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+    <link rel="manifest" href="./assets/images/site.webmanifest">
+    <link rel="mask-icon" href="./assets/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="./assets/style/modifypost.css">
+    <script defer src="./assets/js/base.js"></script>
+</head>
+<body>
+    <div class="progress">
+        <div class="indeterminate"></div>
+    </div>
+    <div class="afterload">
+    <%- include("navigation") %>
+
+    <div class="row" style="margin: 1rem 0">
+        <div class="col s12 m12">
+            <!-- <a href="/dashboard" class="btn waves-effect waves-light purple"><i class="material-icons left">arrow_back</i> Back</a> -->
+            <div class="row">
+                <div class="col s12 m6 offset-m3">
+                    <h5 style="margin: 1rem 0">Add new</h5>
+                    <form action="/modifypost" method="post" enctype="multipart/form-data">
+                        <script>
+                            let getmsg = new URLSearchParams(location.search).get("msg");
+                            if(getmsg) {
+                            document.write(getmsg);
+                            }
+                        </script>
+                        <div class="input-field">
+                            <input type="text" class="validate" id="title" name="title" required />
+                            <label for="title">Title</label>
+                        </div>
+                        <div class="input-field">
+                            <textarea class="materialize-textarea" id="description" name="description"></textarea>
+                            <label for="description">Description</label>
+                        </div>
+                        <div class="file-field input-field" style="margin: 2rem 0">
+                            <div class="btn purple">
+                                <span>File</span>
+                                <input type="file" name="file" required>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Upload post image">
+                            </div>
+                        </div>
+                        <div class="input-field" style="margin: 2rem 0">
+                            <select multiple name="category" required>
+                              <option value="" disabled selected>Choose your Topic</option>
+                              <option value="india">India</option>
+                              <option value="world">World</option>
+                              <option value="business">Business</option>
+                              <option value="technology">Technology</option>
+                              <option value="entertainment">Entertainment</option>
+                              <option value="sports">Sports</option>
+                              <option value="science">Science</option>
+                              <option value="health">Health</option>
+                            </select>
+                            <label>Category</label>
+                        </div>
+                        <div class="input-field">
+                            <button type="submit" class="btn waves-effect waves-light purple">PUBLISH <i class="material-icons right">publish</i></button>
+                            <!-- <a href="/dashboard" class="btn waves-effect waves-light black"><i class="material-icons left">arrow_back</i> Back</a> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <%- include("floatingactionbutton") %>
+    </div>
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            M.textareaAutoResize($('#description'));
+            var formselect = document.querySelectorAll('select');
+            M.FormSelect.init(formselect);
+        });
+
+        $('select').formSelect();
+    </script>
+</body>
+</html>

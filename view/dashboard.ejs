@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+    <link rel="manifest" href="./assets/images/site.webmanifest">
+    <link rel="mask-icon" href="./assets/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="./assets/style/dashboard.css">
+    <script defer src="./assets/js/base.js"></script>
+</head>
+<body>
+    <div class="progress">
+        <div class="indeterminate"></div>
+    </div>
+    <div class="afterload">
+    <%- include("navigation") %>
+
+        <div class="row" style="margin: 1rem 0">
+            <div class="col s12 m6">
+                <h5>Profile</h5>
+                <div class="card blue dark-1 white-text">
+                    <div class="card-content">
+                        <div class="card-title">
+                            <h5>Hello, <%= `${profile["fname"]} ${profile["lname"]}` %> !</h5>
+                        </div>
+                        <div class="divider" style="margin: 1rem 0"></div>
+                        <div>Your</div>
+                        <div>Username: <%= profile["username"] %></div>
+                        <div>Registered Email: <%= profile["email"] %></div>
+                        <div>Gender: <%= profile["gender"] %></div>
+                        <div>Date of birth: <%= profile["dob"] %></div>
+                    </div>
+                </div>
+                <div class="card green dark-1 white-text">
+                    <div class="card-content">
+                        <a href="/modifypost" class="btn">Add new post</a>
+                        <a href="/postlist" class="btn">Post list</a>
+                        <a href="/contactlist" class="btn">Contact list</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col s12 m6">
+                <h5>Latest news over world</h5>
+                <div class="collection api"></div>
+                <script>
+                    async function fetchText() {
+                        let response = await fetch('http://newsapi.org/v2/top-headlines?country=us&pagesize=6&apiKey=e0bbe9ba08eb46aaa8d1e65ece90c64f');
+                        let data = await response.json();
+                        data["articles"].forEach((data) => {
+                            let news = document.createElement("div");
+                            news.setAttribute("class", "collection-item");
+                            news.innerHTML = data["description"];
+                            document.querySelector(".api").appendChild(news);
+                        })
+                    }
+                    fetchText();
+                </script>
+            </div>
+
+            <%- include("floatingactionbutton") %>
+        </div>
+
+        <!-- <footer class="page-footer purple lighten-1 center" style="padding: 1rem 0">
+            Copyright 2020 - <script>document.write(new Date().getFullYear())</script> - Powered By <%= title %>
+        </footer> -->
+
+    </div>
+</body>
+</html>

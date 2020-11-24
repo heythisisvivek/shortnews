@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+    <link rel="manifest" href="./assets/images/site.webmanifest">
+    <link rel="mask-icon" href="./assets/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="./assets/style/contact.css">
+    <script defer src="./assets/js/base.js"></script>
+</head>
+<body>
+    <div class="progress">
+        <div class="indeterminate"></div>
+    </div>
+    <div class="afterload">
+
+    <div class="row" style="margin: 1rem 0">
+        <div class="col s12 m12">
+            <div class="row">
+                <div class="col s12 m6 offset-m3">
+                    <h5 style="margin: 1rem 0">Contact Us</h5>
+                    <form action="/contact" method="post">
+                        <script>
+                            let getmsg = new URLSearchParams(location.search).get("msg");
+                            if(getmsg) {
+                            document.write(getmsg);
+                            }
+                        </script>
+                        <div class="input-field">
+                            <input type="text" class="validate" id="name" name="name" required />
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" class="validate" id="email" name="email" required />
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" class="validate" id="phoneno" name="phoneno" required />
+                            <label for="phoneno">Phone no</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" class="validate" id="subject" name="subject" required />
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="input-field">
+                            <textarea class="materialize-textarea" id="message" name="message" required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <div class="input-field">
+                            <button type="submit" class="btn waves-effect waves-light purple">PUBLISH <i class="material-icons right">publish</i></button>
+                            <!-- <a href="/dashboard" class="btn waves-effect waves-light black"><i class="material-icons left">arrow_back</i> Back</a> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            M.textareaAutoResize($('#message'));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.progress {
+  width: 50%;
+  margin: 20% auto;
+  display: block;
+}
+
+.afterload {
+  display: none;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+.darkmode {
+  background: #222;
+}
+.darkmode #slide-out {
+  color: #FFF;
+  background: #222;
+}
+.darkmode #slide-out li a {
+  color: #FFF;
+}
+.darkmode #fullpage h4 {
+  color: #FFF;
+}
+.darkmode #fullpage p {
+  color: #FFF;
+}
+
+#fullpage .section {
+  padding: 0 !important;
+}
+#fullpage .section .fp-tableCell {
+  vertical-align: unset !important;
+}
+
+@media screen and (min-width: 800px) {
+  #fullpage {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

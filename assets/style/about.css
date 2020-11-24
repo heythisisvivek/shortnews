@@ -1,0 +1,16 @@
+body {
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  background: url("../images/pattern.jpg");
+}
+
+.section .title {
+  font-weight: bold;
+  font-size: 2.2rem;
+}
+.section p {
+  margin: 1rem 0;
+  background: #FFF;
+}
+
+/*# sourceMappingURL=about.css.map */

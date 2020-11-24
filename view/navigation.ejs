@@ -1,0 +1,34 @@
+<ul id="slide-out" class="sidenav">
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img src="https://i.pinimg.com/originals/3b/31/ff/3b31ffc23e8d1ebe7db5b5e4361fb906.png" alt="Background">
+            </div>
+            <a href="#"><img class="circle z-depth-2" src="https://225508-687545-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/12/Arnab-Goswami-Image.jpg" alt="Profile"></a>
+            <a href="#"><span class="white-text name"><%= `${profile["fname"]} ${profile["lname"]}` %></span></a>
+            <a href="#"><span class="white-text email"><%= profile["email"] %></span></a>
+        </div>
+    </li>
+    <li><a href="/dashboard">Home</a></li>
+    <li><a href="/modifypost">New Post</a></li>
+      <li><a href="/postlist">Post List</a></li>
+      <li><a href="/contactlist">Contact</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/logout">Logout</a></li>
+</ul>
+<nav class="purple">
+    <div class="nav-wrapper">
+        <a href="" class="brand-logo left" style="margin: 0 1rem"><%= title %></a>
+        <ul class="right hide-on-med-and-down">
+            <li class="active"><a href="/dashboard">Home</a></li>
+            <li><a href="/modifypost">New Post</a></li>
+              <li><a href="/postlist">Post List</a></li>
+              <li><a href="/contactlist">Contact</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-up">
+            <li><a href="#" data-target="slide-out" class="sidenav-trigger"><i data-target="" class="material-icons">menu</i></a></li>
+        </ul>
+    </div>
+</nav>

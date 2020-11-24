@@ -1,0 +1,40 @@
+@import "_base";
+
+.darkmode {
+    background: #222;
+
+    #slide-out {
+        color: #FFF;
+        background: #222;
+
+        li {
+            a {
+                color: #FFF;
+            }
+        }
+    }
+
+    #fullpage {
+        h4 {
+            color: #FFF;
+        }
+        p {
+            color: #FFF;
+        }
+    }
+}
+
+#fullpage {
+    .section {
+        padding: 0 !important;
+        .fp-tableCell {
+            vertical-align: unset !important;
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #fullpage {
+        display: none;
+    }
+}
