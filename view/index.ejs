@@ -43,7 +43,7 @@
             <li><a href="/about">About</a></li>
         </ul>
 
-        <div id="fullpage">
+        <div id="fullpage" class="fullpage">
             <% posts.forEach((post) => { %>
             <div class="section">
                 <img src="./uploads/<%= post['image'] %>" style="height: 50%; width: 100%; object-fit: cover; border-radius: 0rem 0rem 1rem 1rem;" class="z-depth-2" alt="">
@@ -81,7 +81,7 @@
 
             <div class="row">
                 <% posts.reverse().forEach((post) => { %>
-                    <div class="col s12 m3">
+                    <div class="col s12 m8 offset-m2">
                         <div class="card">
                             <div class="card-image">
                                 <img style="height: 200px; object-fit: cover;" src='uploads/<%= post["image"] %>'>
@@ -89,10 +89,8 @@
                             <div class="card-content">
                                 <span class="card-title"><%= post["title"] %></span>
                                 <p><%= post["description"] %></p>
-                            </div>
-                            <div class="card-action">
-                                <a href='/postlist/edit?id=<%= post["_id"] %>'>Edit</a>
-                                <a href='/postlist/delete?id=<%= post["_id"] %>'>Delete</a>
+                                <div class="divider" style="margin: 1rem 0"></div>
+                                <span class="grey-text darken-3">Publised on <%= post["publishDate"] %></span>
                             </div>
                         </div>
                     </div>
@@ -102,8 +100,14 @@
 
     </div>
     <script>
+        if(screen.width < 800) {
+          console.log(screen.width)
+          document.querySelector("#fullpage").setAttribute("class", "fullpage");
+        } else {
+          document.querySelector("#fullpage").removeAttribute("class", "fullpage");
+        }
         $("document").ready(function() {
-            new fullpage('#fullpage', {
+            new fullpage('.fullpage', {
                 css3: true,
                 // scrollingSpeed: 1000,
                 dragAndMove: true,
