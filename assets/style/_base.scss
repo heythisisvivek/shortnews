@@ -22,3 +22,27 @@ html.transition *:before,
 html.transition *:after {
   transition: all 750ms !important;
   transition-delay: 0 !important; }
+
+  .darkmode {
+    background: #222;
+
+    #slide-out {
+        color: #FFF;
+        background: #222;
+
+        li {
+            a {
+                color: #FFF;
+            }
+        }
+    }
+
+    #fullpage {
+        h4 {
+            color: #FFF;
+        }
+        p {
+            color: #FFF;
+        }
+    }
+}

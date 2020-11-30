@@ -23,4 +23,21 @@ html.transition *:after {
   transition-delay: 0 !important;
 }
 
+.darkmode {
+  background: #222;
+}
+.darkmode #slide-out {
+  color: #FFF;
+  background: #222;
+}
+.darkmode #slide-out li a {
+  color: #FFF;
+}
+.darkmode #fullpage h4 {
+  color: #FFF;
+}
+.darkmode #fullpage p {
+  color: #FFF;
+}
+
 /*# sourceMappingURL=modifypost.css.map */

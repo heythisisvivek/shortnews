@@ -52,5 +52,10 @@ html.transition *:after {
     display: none;
   }
 }
+.fixed-action-btn {
+  right: 2rem !important;
+  bottom: 2rem !important;
+  position: absolute;
+}
 
 /*# sourceMappingURL=index.css.map */

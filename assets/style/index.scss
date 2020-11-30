@@ -1,29 +1,5 @@
 @import "_base";
 
-.darkmode {
-    background: #222;
-
-    #slide-out {
-        color: #FFF;
-        background: #222;
-
-        li {
-            a {
-                color: #FFF;
-            }
-        }
-    }
-
-    #fullpage {
-        h4 {
-            color: #FFF;
-        }
-        p {
-            color: #FFF;
-        }
-    }
-}
-
 #fullpage {
     .section {
         padding: 0 !important;
@@ -37,4 +13,10 @@
     #fullpage {
         display: none;
     }
+}
+
+.fixed-action-btn {
+    right: 2rem !important;
+    bottom: 2rem !important;
+    position: absolute;
 }

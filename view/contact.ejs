@@ -16,12 +16,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="./assets/style/contact.css">
     <script defer src="./assets/js/base.js"></script>
+    <script defer src="./assets/js/index.js"></script>
 </head>
 <body>
     <div class="progress">
         <div class="indeterminate"></div>
     </div>
     <div class="afterload">
+
+    <%- include("slide-nav") %>
+
+    <nav>
+        <div class="nav-wrapper purple" style="padding: 0 1rem">
+            <a href="" class="brand-logo"><%= title %></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li>
+                <div class="switch" style="margin-left: 1rem">
+                    <label>
+                        <input type="checkbox" id="darkmodefull">
+                        <span class="lever"></span>
+                    </label>
+                    Dark mode
+                    </div>
+                </li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/about">Privacy</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="row" style="margin: 1rem 0">
         <div class="col s12 m12">
@@ -70,6 +94,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             M.textareaAutoResize($('#message'));
+            $('.sidenav').sidenav();
         });
     </script>
 </body>

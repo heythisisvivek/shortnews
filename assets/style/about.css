@@ -13,4 +13,8 @@ body {
   background: #FFF;
 }
 
+.darkmode {
+  background: url("../images/pattern.jpg");
+}
+
 /*# sourceMappingURL=about.css.map */

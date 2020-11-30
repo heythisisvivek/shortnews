@@ -24,6 +24,7 @@ express.use("/contact", contact);
 express.use("/contactlist", contactlist);
 const title = process.env.TITLE;
 const port = process.env.PORT || 3000;
+const url = process.env.URL || "localhost:3000";
 
 express.get("/", async(req, res) => {
     try {
@@ -31,7 +32,7 @@ express.get("/", async(req, res) => {
             if(err) {
                 console.log("Failed to establised");
             } else {
-                res.render(path.join(__dirname, "view"), {"title": title, "posts": r});
+                res.render(path.join(__dirname, "view"), {"title": title, "posts": r, "url": url});
             }
         })
     } catch(error) {
